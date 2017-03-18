@@ -5,9 +5,14 @@ package sixpack;
  */
 public class Hand extends Deck {
 
-    public Hand() {
+    private String playerName;
+
+    public Hand(String playerName) {
         super();
+        this.playerName = playerName;
     }
+
+
 
 
 }
