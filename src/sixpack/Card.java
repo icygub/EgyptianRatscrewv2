@@ -48,4 +48,8 @@ public class Card {
     public String getValue() {
         return value;
     }
+
+    public String getCardName() {
+        return value + " of " + suit;
+    }
 }

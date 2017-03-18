@@ -10,6 +10,17 @@ public class ERS {
     private Hand handTwo;
 
     public ERS(Deck gameDeck, Hand handOne, Hand handTwo) {
-
+        this.gameDeck = gameDeck;
+        this.handOne = handOne;
+        this.handTwo = handTwo;
     }
+
+    public void setup() {
+        gameDeck.fill();
+        gameDeck.printDeck();
+        //gameDeck.shuffle();
+        //gameDeck.dealCardsToHands();
+    }
+
+
 }

@@ -14,9 +14,10 @@ public class Main {
         name = sc.nextLine();
 
         System.out.printf("Hi, %s. The game will now start. \n" +
-                "(enter key) = play card || (s + enter key) = slap", name);
+                "(enter key) = play card || (s + enter key) = slap\n", name);
 
-        ERS ers = new ERS(new Deck(), new Hand(name), new Hand("Computer"));    
+        ERS ers = new ERS(new Deck(), new Hand(name), new Hand("Computer"));
+        ers.setup();
 
 
         //this tests the card class to make sure it works
