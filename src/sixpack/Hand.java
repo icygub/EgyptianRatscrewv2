@@ -2,6 +2,7 @@ package sixpack;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 /**
  * Created by icyhot on 17/03/2017.
@@ -10,26 +11,20 @@ public class Hand{
 
     private String playerName;
     private ArrayList<Card> hand = new ArrayList<>();
+    private boolean isComputer;
+    private Scanner sc = new Scanner(System.in);
 
-    public Hand(String playerName) {
-        super();
+    public Hand(String playerName, boolean isComputer) {
         this.playerName = playerName;
+        this.isComputer = isComputer;
     }
 
     public String getPlayerName() {
         return playerName;
     }
 
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
-
     public ArrayList<Card> getHand() {
         return hand;
-    }
-
-    public void setHand(ArrayList<Card> hand) {
-        this.hand = hand;
     }
 
     public int getSize() {
@@ -58,5 +53,32 @@ public class Hand{
             String cardName = hand.get(i).getCardName();
             System.out.println(cardName);
         }
+        System.out.println("==============\n==============");
+    }
+
+    public String getInput (){
+        if(isComputer)
+            return getComputerInput();
+
+        return getHumanInput();
+
+    }
+
+    public String getComputerInput() {
+        return "";
+    }
+
+    public String getHumanInput() {
+        //special card on top of the deck
+        //sandwich on top of the deck
+        //double on top of the deck
+        String input = sc.nextLine();
+        return input;
+    }
+
+    public void dealCard(Deck deck) {
+        deck.add(hand.get(hand.size()-1)); //adds top card of hand to the deck
+        System.out.println("******" + hand.get(hand.size()-1).getCardName());
+        hand.remove(hand.size()-1); //removes top card from hand
     }
 }
