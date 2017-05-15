@@ -56,29 +56,14 @@ public class Hand{
         System.out.println("==============\n==============");
     }
 
-    public String getInput (){
-        if(isComputer)
-            return getComputerInput();
-
-        return getHumanInput();
-
-    }
-
-    public String getComputerInput() {
-        return "";
-    }
-
-    public String getHumanInput() {
-        //special card on top of the deck
-        //sandwich on top of the deck
-        //double on top of the deck
-        String input = sc.nextLine();
-        return input;
-    }
-
     public void dealCard(Deck deck) {
         deck.add(hand.get(hand.size()-1)); //adds top card of hand to the deck
         System.out.println("******" + hand.get(hand.size()-1).getCardName());
         hand.remove(hand.size()-1); //removes top card from hand
     }
+
+    public boolean isComputer() {
+        return isComputer;
+    }
+
 }

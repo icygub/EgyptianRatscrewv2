@@ -110,6 +110,10 @@ public class Deck {
         return deck.size();
     }
 
+    public String getTopCardValue() {
+        return deck.get(deck.size()-1).getValue();
+    }
+
 
 
 
